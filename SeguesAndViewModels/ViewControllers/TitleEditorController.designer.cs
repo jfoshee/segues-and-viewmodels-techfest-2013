@@ -13,6 +13,9 @@ namespace SeguesAndViewModels
 	partial class TitleEditorController
 	{
 		[Outlet]
+		MonoTouch.UIKit.UIButton RandomButton { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UITextField TitleField { get; set; }
 
 		[Outlet]
@@ -20,6 +23,11 @@ namespace SeguesAndViewModels
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (RandomButton != null) {
+				RandomButton.Dispose ();
+				RandomButton = null;
+			}
+
 			if (TitleField != null) {
 				TitleField.Dispose ();
 				TitleField = null;

@@ -12,6 +12,7 @@ namespace SeguesAndViewModels
 		{
 			VM.PropertyChanged += HandlePropertyChanged;
 			UpdateButton.TouchUpInside += HandleTouchUpInside;
+			RandomButton.TouchUpInside += (s,e) => VM.Randomize();
 		}
 
 		void HandlePropertyChanged(object sender, PropertyChangedEventArgs e)

@@ -18,7 +18,7 @@ namespace SeguesAndViewModels
 			var rnd = new Random();
 			var buffer = new byte[20];
 			rnd.NextBytes(buffer);
-			Title = System.Text.Encoding.ASCII.GetString(buffer);
+			Title = System.Text.Encoding.UTF8.GetString(buffer);
 		}
 	}
 }
