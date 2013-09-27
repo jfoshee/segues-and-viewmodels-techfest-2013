@@ -1,0 +1,26 @@
+[Oo]bj
+[Bb]in
+TestResults
+test-results
+*.user
+*.userprefs
+*.suo
+*.[Cc]ache
+*.bak
+*.ncb
+*.log 
+*.DS_Store
+[Tt]humbs.db 
+_ReSharper.*
+*.resharper
+Ankh.NoLoad
+*.docstates
+*.nupkg
+*.pidb
+
+# NUnit
+TestResult.xml
+!packages/NUnit-2.6.1/bin
+
+# NAnt
+build
