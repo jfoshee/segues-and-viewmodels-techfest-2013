@@ -9,8 +9,8 @@ using System.CodeDom.Compiler;
 
 namespace SeguesAndViewModels
 {
-	[Register ("SeguesAndViewModelsViewController")]
-	partial class SeguesAndViewModelsViewController
+	[Register ("InitialController")]
+	partial class InitialController
 	{
 		[Outlet]
 		MonoTouch.UIKit.UILabel TitleLabel { get; set; }

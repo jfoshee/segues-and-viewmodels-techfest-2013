@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace SeguesAndViewModels
 {
-	public partial class SeguesAndViewModelsViewController : UIViewController
+	public partial class InitialController : UIViewController
 	{
 		InitialViewModel _vm = new InitialViewModel();
 
@@ -23,9 +23,9 @@ namespace SeguesAndViewModels
 		{
 			base.PrepareForSegue(segue, sender);
 			var nextController = segue.DestinationViewController as TitleEditorController;
-			nextController.VM = _vm;
+			nextController.VM = new TitleEditorViewModel { Predecessor = _vm };
 		}
 
-		public SeguesAndViewModelsViewController(IntPtr handle) : base(handle) { }
+		public InitialController(IntPtr handle) : base(handle) { }
 	}
 }

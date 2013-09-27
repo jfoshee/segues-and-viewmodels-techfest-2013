@@ -84,6 +84,7 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="ViewControllers\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -91,14 +92,15 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="SeguesAndViewModelsViewController.cs" />
-    <Compile Include="SeguesAndViewModelsViewController.designer.cs">
-      <DependentUpon>SeguesAndViewModelsViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewModels\InitialViewModel.cs" />
-    <Compile Include="TitleEditorController.cs" />
-    <Compile Include="TitleEditorController.designer.cs">
+    <Compile Include="ViewModels\TitleEditorViewModel.cs" />
+    <Compile Include="ViewControllers\TitleEditorController.cs" />
+    <Compile Include="ViewControllers\TitleEditorController.designer.cs">
       <DependentUpon>TitleEditorController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\InitialController.cs" />
+    <Compile Include="ViewControllers\InitialController.designer.cs">
+      <DependentUpon>InitialController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
