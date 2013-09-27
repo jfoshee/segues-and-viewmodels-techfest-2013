@@ -9,17 +9,25 @@ using System.CodeDom.Compiler;
 
 namespace SeguesAndViewModels
 {
-	[Register ("SeguesAndViewModelsViewController")]
-	partial class SeguesAndViewModelsViewController
+	[Register ("TitleEditorController")]
+	partial class TitleEditorController
 	{
 		[Outlet]
-		MonoTouch.UIKit.UILabel TitleLabel { get; set; }
+		MonoTouch.UIKit.UITextField TitleField { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIButton UpdateButton { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (TitleLabel != null) {
-				TitleLabel.Dispose ();
-				TitleLabel = null;
+			if (TitleField != null) {
+				TitleField.Dispose ();
+				TitleField = null;
+			}
+
+			if (UpdateButton != null) {
+				UpdateButton.Dispose ();
+				UpdateButton = null;
 			}
 		}
 	}

@@ -12,17 +12,18 @@ namespace SeguesAndViewModels
 		{
 			_vm.PropertyChanged += HandlePropertyChanged;
 			TitleLabel.Text = _vm.Title;
-			UpdateButton.TouchUpInside += HandleTouchUpInside;
 		}
 
 		void HandlePropertyChanged(object sender, PropertyChangedEventArgs e)
 		{
-			TitleLabel.Text = _vm.Title;
+			TitleLabel.Text = _vm.Title;	// VM => V
 		}
 
-		void HandleTouchUpInside(object sender, EventArgs e)
+		public override void PrepareForSegue(UIStoryboardSegue segue, MonoTouch.Foundation.NSObject sender)
 		{
-			_vm.Title = TitleField.Text;
+			base.PrepareForSegue(segue, sender);
+			var nextController = segue.DestinationViewController as TitleEditorController;
+			nextController.VM = _vm;
 		}
 
 		public SeguesAndViewModelsViewController(IntPtr handle) : base(handle) { }

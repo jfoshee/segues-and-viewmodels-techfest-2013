@@ -96,6 +96,10 @@
       <DependentUpon>SeguesAndViewModelsViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\InitialViewModel.cs" />
+    <Compile Include="TitleEditorController.cs" />
+    <Compile Include="TitleEditorController.designer.cs">
+      <DependentUpon>TitleEditorController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
