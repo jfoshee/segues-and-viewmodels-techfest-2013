@@ -85,6 +85,7 @@
     <Folder Include="Resources\" />
     <Folder Include="ViewModels\" />
     <Folder Include="ViewControllers\" />
+    <Folder Include="MVVM\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -102,16 +103,17 @@
     <Compile Include="ViewControllers\InitialController.designer.cs">
       <DependentUpon>InitialController.cs</DependentUpon>
     </Compile>
-    <Compile Include="IHasViewModel.cs" />
-    <Compile Include="IFollow.cs" />
-    <Compile Include="ViewModelFactory.cs" />
     <Compile Include="ViewControllers\PageTwoController.cs" />
     <Compile Include="ViewControllers\PageTwoController.designer.cs">
       <DependentUpon>PageTwoController.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\PageTwoViewModel.cs" />
-    <Compile Include="ViewModelBase.cs" />
-    <Compile Include="Reflection.cs" />
+    <Compile Include="MVVM\Reflection.cs" />
+    <Compile Include="MVVM\ViewModelFactory.cs" />
+    <Compile Include="MVVM\ViewModelBase.cs" />
+    <Compile Include="MVVM\UIViewControllerWithViewModel.cs" />
+    <Compile Include="MVVM\IHasViewModel.cs" />
+    <Compile Include="MVVM\IFollow.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
