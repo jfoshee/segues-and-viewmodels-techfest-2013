@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
 namespace SeguesAndViewModels
@@ -22,7 +23,7 @@ namespace SeguesAndViewModels
 			ViewModelChanged();
 		}
 
-		public override void PrepareForSegue(UIStoryboardSegue segue, MonoTouch.Foundation.NSObject sender)
+		public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
 		{
 			base.PrepareForSegue(segue, sender);
 			ViewModelFactory.Instance.InitializeNextViewModel(segue);
