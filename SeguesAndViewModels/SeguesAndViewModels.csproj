@@ -105,6 +105,13 @@
     <Compile Include="IHasViewModel.cs" />
     <Compile Include="IFollow.cs" />
     <Compile Include="ViewModelFactory.cs" />
+    <Compile Include="ViewControllers\PageTwoController.cs" />
+    <Compile Include="ViewControllers\PageTwoController.designer.cs">
+      <DependentUpon>PageTwoController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\PageTwoViewModel.cs" />
+    <Compile Include="ViewModelBase.cs" />
+    <Compile Include="Reflection.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
