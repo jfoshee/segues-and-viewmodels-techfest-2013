@@ -6,8 +6,14 @@ namespace SeguesAndViewModels
 {
 	public class ViewModelBase<T> : INotifyPropertyChanged, IFollow<T>
 	{
-		public T Predecessor { get; set; }
+		T _predecessor;
+		public T Predecessor {
+			get { return _predecessor; }
+			set { _predecessor = value; PredecessorChanged(); }
+		}
 		public event PropertyChangedEventHandler PropertyChanged;
+
+		public virtual void PredecessorChanged() {}
 
 		protected void Notify<TProperty>(Expression<Func<TProperty>> property)
 		{

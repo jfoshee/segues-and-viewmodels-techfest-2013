@@ -114,6 +114,12 @@
     <Compile Include="MVVM\UIViewControllerWithViewModel.cs" />
     <Compile Include="MVVM\IHasViewModel.cs" />
     <Compile Include="MVVM\IFollow.cs" />
+    <Compile Include="ViewControllers\ReuseExampleController.cs" />
+    <Compile Include="ViewControllers\ReuseExampleController.designer.cs">
+      <DependentUpon>ReuseExampleController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ReuseExampleViewModel.cs" />
+    <Compile Include="MVVM\IReusable.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

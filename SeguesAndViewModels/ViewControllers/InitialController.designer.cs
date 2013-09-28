@@ -14,12 +14,28 @@ namespace SeguesAndViewModels
 	{
 		[Outlet]
 		MonoTouch.UIKit.UILabel TitleLabel { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UISlider Value1Slider { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UISlider Value2Slider { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
 			if (TitleLabel != null) {
 				TitleLabel.Dispose ();
 				TitleLabel = null;
+			}
+
+			if (Value1Slider != null) {
+				Value1Slider.Dispose ();
+				Value1Slider = null;
+			}
+
+			if (Value2Slider != null) {
+				Value2Slider.Dispose ();
+				Value2Slider = null;
 			}
 		}
 	}

@@ -13,6 +13,9 @@ namespace SeguesAndViewModels
 			set { _title = value; PropertyChanged(this, new PropertyChangedEventArgs("Title")); }
 		}
 
+		public float Value1 { get; set; }
+		public float Value2 { get; set; }
+
 		public InitialViewModel()
 		{
 			_title = "Hello, World!";

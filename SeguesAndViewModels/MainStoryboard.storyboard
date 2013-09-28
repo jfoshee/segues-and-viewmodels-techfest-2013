@@ -31,6 +31,14 @@
                                     </segue>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="3Pv-lf-P4s">
+                                <rect key="frame" x="18" y="595" width="732" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="Ttk-LK-yNt">
+                                <rect key="frame" x="18" y="672" width="732" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -43,6 +51,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="TitleLabel" destination="1JZ-oK-gCj" id="Zhs-R1-gZ0"/>
+                        <outlet property="Value1Slider" destination="3Pv-lf-P4s" id="hwc-mP-MCv"/>
+                        <outlet property="Value2Slider" destination="Ttk-LK-yNt" id="WoQ-N9-ywg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
@@ -97,6 +107,24 @@
                     <view key="view" contentMode="scaleToFill" id="VFY-cl-NEk">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <containerView contentMode="scaleToFill" id="OHd-Sd-LbT">
+                                <rect key="frame" x="258" y="289" width="253" height="137"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="DwP-WP-eTf" kind="embed" identifier="1" id="5PL-vM-vTH"/>
+                                </connections>
+                            </containerView>
+                            <containerView contentMode="scaleToFill" id="Nvx-bP-MpO">
+                                <rect key="frame" x="258" y="503" width="253" height="137"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="DwP-WP-eTf" kind="embed" identifier="2" id="sRc-Zw-JDY"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="zPt-Hy-9I6"/>
@@ -120,10 +148,40 @@
             </objects>
             <point key="canvasLocation" x="-974" y="-79"/>
         </scene>
+        <!--Reuse Example Controller-->
+        <scene sceneID="B7H-rb-iL0">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="DwP-WP-eTf" customClass="ReuseExampleController" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cQU-wa-zwS">
+                        <rect key="frame" x="0.0" y="0.0" width="253" height="137"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?????" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BkJ-5R-Wre">
+                                <rect key="frame" x="72" y="58" width="110" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="ValueLabel" destination="BkJ-5R-Wre" id="EQl-la-a1W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mS5-V4-yR6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2142" y="353"/>
+        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="sRc-Zw-JDY"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -16,6 +16,8 @@ namespace SeguesAndViewModels
 		{
 			_vm.PropertyChanged += HandlePropertyChanged;
 			TitleLabel.Text = _vm.Title;
+			Value1Slider.ValueChanged += (sender, e) => _vm.Value1 = Value1Slider.Value;
+			Value2Slider.ValueChanged += (sender, e) => _vm.Value2 = Value2Slider.Value;
 		}
 
 		void HandlePropertyChanged(object sender, PropertyChangedEventArgs e)
