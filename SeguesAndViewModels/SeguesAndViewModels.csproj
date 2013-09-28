@@ -102,6 +102,9 @@
     <Compile Include="ViewControllers\InitialController.designer.cs">
       <DependentUpon>InitialController.cs</DependentUpon>
     </Compile>
+    <Compile Include="IHasViewModel.cs" />
+    <Compile Include="IFollow.cs" />
+    <Compile Include="ViewModelFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

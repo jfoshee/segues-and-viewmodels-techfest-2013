@@ -4,9 +4,13 @@ using System.ComponentModel;
 
 namespace SeguesAndViewModels
 {
-	public partial class InitialController : UIViewController
+	public partial class InitialController : UIViewController, IHasViewModel
 	{
 		InitialViewModel _vm = new InitialViewModel();
+		INotifyPropertyChanged IHasViewModel.VM {
+			get { return _vm; }
+			set { _vm = (InitialViewModel)value; }
+		}
 
 		public override void ViewDidLoad()
 		{
@@ -22,8 +26,7 @@ namespace SeguesAndViewModels
 		public override void PrepareForSegue(UIStoryboardSegue segue, MonoTouch.Foundation.NSObject sender)
 		{
 			base.PrepareForSegue(segue, sender);
-			var nextController = segue.DestinationViewController as TitleEditorController;
-			nextController.VM = new TitleEditorViewModel { Predecessor = _vm };
+			ViewModelFactory.Instance.InitializeNextViewModel(segue);
 		}
 
 		public InitialController(IntPtr handle) : base(handle) { }

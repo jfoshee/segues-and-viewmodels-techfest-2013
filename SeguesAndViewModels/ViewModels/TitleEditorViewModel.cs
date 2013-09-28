@@ -1,9 +1,11 @@
 using System;
 using System.ComponentModel;
+using MonoTouch.Foundation;
 
 namespace SeguesAndViewModels
 {
-	public class TitleEditorViewModel : INotifyPropertyChanged
+	[Preserve]
+	public class TitleEditorViewModel : INotifyPropertyChanged, IFollow<InitialViewModel>
 	{
 		public event PropertyChangedEventHandler PropertyChanged;
 		public InitialViewModel Predecessor { get; set; }
@@ -16,9 +18,7 @@ namespace SeguesAndViewModels
 		public void Randomize()
 		{
 			var rnd = new Random();
-			var buffer = new byte[20];
-			rnd.NextBytes(buffer);
-			Title = System.Text.Encoding.UTF8.GetString(buffer);
+			Title = rnd.NextDouble().ToString();
 		}
 	}
 }

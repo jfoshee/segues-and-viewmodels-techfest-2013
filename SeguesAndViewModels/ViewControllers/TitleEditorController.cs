@@ -4,9 +4,13 @@ using System.ComponentModel;
 
 namespace SeguesAndViewModels
 {
-	public partial class TitleEditorController : UIViewController
+	public partial class TitleEditorController : UIViewController, IHasViewModel
 	{
 		public TitleEditorViewModel VM { get; set; }
+		INotifyPropertyChanged IHasViewModel.VM {
+			get { return VM; }
+			set { VM = (TitleEditorViewModel)value; }
+		}
 
 		public override void ViewDidLoad()
 		{
