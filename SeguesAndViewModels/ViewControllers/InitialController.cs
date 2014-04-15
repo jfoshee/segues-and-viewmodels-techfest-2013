@@ -1,35 +1,48 @@
 using System;
-using MonoTouch.UIKit;
 using System.ComponentModel;
+using MonoTouch.CoreGraphics;
+using MonoTouch.UIKit;
 
 namespace SeguesAndViewModels
 {
-	public partial class InitialController : UIViewController, IHasViewModel
+    public partial class InitialController : UIViewControllerWithViewModel
 	{
-		InitialViewModel _vm = new InitialViewModel();
-		INotifyPropertyChanged IHasViewModel.VM {
-			get { return _vm; }
-			set { _vm = (InitialViewModel)value; }
-		}
+        public InitialViewModel InitialViewModel { get { return (InitialViewModel)VM; } }
 
-		public override void ViewDidLoad()
-		{
-			_vm.PropertyChanged += HandlePropertyChanged;
-			TitleLabel.Text = _vm.Title;
-			Value1Slider.ValueChanged += (sender, e) => _vm.Value1 = Value1Slider.Value;
-			Value2Slider.ValueChanged += (sender, e) => _vm.Value2 = Value2Slider.Value;
-		}
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+            VM = new InitialViewModel();
+        }
 
-		void HandlePropertyChanged(object sender, PropertyChangedEventArgs e)
-		{
-			TitleLabel.Text = _vm.Title;	// VM => V
-		}
+        public override void ViewModelChanged()
+        {
+            if (InitialViewModel != null)
+            {
+                TitleLabel.Text = InitialViewModel.Title;
+                Value1Slider.Value = InitialViewModel.Value1;
+                Value1Slider.ValueChanged += (sender, e) => InitialViewModel.Value1 = Value1Slider.Value;
+                Value2Slider.Value = InitialViewModel.Value2;
+                Value2Slider.ValueChanged += (sender, e) => InitialViewModel.Value2 = Value2Slider.Value;
+            }
+        }
 
-		public override void PrepareForSegue(UIStoryboardSegue segue, MonoTouch.Foundation.NSObject sender)
-		{
-			base.PrepareForSegue(segue, sender);
-			ViewModelFactory.Instance.InitializeNextViewModel(segue);
-		}
+        public override void HandlePropertyChanged(string propertyName)
+        {
+            switch(propertyName)
+            {
+            case "Title":
+                TitleLabel.Text = InitialViewModel.Title;
+                break;
+            case "Value1":
+                TitleLabel.Font = UIFont.SystemFontOfSize(8 + InitialViewModel.Value1 * 10);
+                break;
+            case "Value2":
+                TitleLabel.Transform = CGAffineTransform.MakeRotation(
+                    InitialViewModel.Value2 * 2 * (float)Math.PI);
+                break;
+            }
+        }
 
 		public InitialController(IntPtr handle) : base(handle) { }
 	}
